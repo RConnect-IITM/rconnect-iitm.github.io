@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@100&display=swap" rel="stylesheet"> 
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ce81bc62d6.js" crossorigin="anonymous"></script>
+    <title>Contact Us</title>
+</head>
+<body>
+
+</section>
+<div id="sideNav">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="mtt.html">Meet the Team</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</div>
+<div id="menuBtn">
+    <img src="images/menu.png" id="menu">
+</div>
+<section class="contact">
+    <div class="content">
+        <h2> Contact Us</h2>
+        <p> data </p>
+    </div>
+    <div class="contact-container">
+        <div class="contactInfo">
+            <div  class="box">
+                <div class="icon"><i class="fa fa-instagram" onclick="parent.location='https://www.instagram.com/iitm_resaff/'"></i>
+
+                </div>
+                <div class="text">
+                    <h3>Instagram</h3>
+                    <p>@iitm_resaff</p>
+                </div>
+            </div>
+            <div  class="box">
+                <div class="icon">
+                    <i class="fa fa-linkedin" onclick="parent.location='https://www.linkedin.com/in/iitm-research-affairs-team/'"></i>
+                </div>
+                <div class="text">
+                    <h3>LinkedIn</h3>
+                    <p> @IIT Madras Research Affairs Teams</p>
+                </div>
+                
+            </div>
+            <div  class="box">
+                <div class="icon">
+                    <i class="fa fa-envelope" onclick="mail()"></i>
+                </div>
+                <div class="text">
+                    <h3>Email</h3>
+                    <p id="contact">mxjiizxo@nhvdg.ddoh.vx.di
+                    <button onclick="Decrypt()" class="decrypt-btn">(Click me to decrypt)</button></p>
+                </div>
+                
+            </div>
+         </div>
+       <!--  <div class="contactForm">
+            <form>
+                <h2>Send Message</h2>
+                <div class="inputbox">
+                    <label for="name"></label>
+                    <input type="text" name="" required="required">
+                    <span>Full Name</span>
+                </div>
+                <div class="inputbox">
+                    <label for="email"></label>
+                    <input type="text" name="" required="required">
+                    <span>Email</span>
+                </div>
+                <div class="inputbox">
+                    <label for="msg"></label>
+                    <textarea required="required"></textarea>
+                    <span>Type your message</span>
+                </div>
+                <div class="inputbox">
+                <input type="submit" name="" value="send"></div>
+            </form>
+        </div> -->
+    </div>
+</section>
+
+<script>
+    var menuBtn=document.getElementById("menuBtn")
+    var sideNav=document.getElementById("sideNav")
+    var menu=document.getElementById("menu")
+    sideNav.style.right="-250px"
+    menuBtn.onclick=function(){
+        if(sideNav.style.right=="-250px"){
+            sideNav.style.right="0"
+        menu.src="images/close.png"
+        }
+        else{
+            sideNav.style.right="-250px"
+            menu.src="images/menu.png"
+        }
+    }
+
+    function Decrypt(){
+    document.getElementById("contact").innerHTML ="Contact me at " +startEncryption("mxjiizxo")+"@"+startEncryption("nhvdg")+"."+startEncryption("ddoh")+"."+startEncryption("vx")+"."+startEncryption("di");
+    }
+
+    function startEncryption(originalMessage) {
+      let encryptedMessage = "";
+      for (letter of originalMessage) {
+        encryptedMessage += shiftLetter(letter, 5);
+      }
+        return encryptedMessage;
+    }
+    function shiftLetter(letter, shift) {
+      let newLetter = "";
+
+      let letterCode = letter.charCodeAt(0);
+      let newLetterCode = letterCode + (shift % 26);
+
+      if (newLetterCode < 97) {
+        // If new letter goes below "a" aka character code 97
+        newLetterCode += 26;
+      } else if (newLetterCode > 122) {
+        // If new letter goes past "z" aka character code 122
+        newLetterCode -= 26;
+      }
+
+      newLetter = String.fromCharCode(newLetterCode);
+      
+      return newLetter;
+    }
+    function mail(){
+        msg="mailto:"+startEncryption("mxjiizxo")+"@"+startEncryption("nhvdg")+"."+startEncryption("ddoh")+"."+startEncryption("vx")+"."+startEncryption("di")
+        window.location=msg;
+    }
+</script>
+</body>
+</html>
