@@ -31,7 +31,7 @@
 <section class="contact">
     <div class="content">
         <h2> Contact Us</h2>
-        <p> data </p>
+        <!-- <p> data </p> -->
     </div>
     <div class="contact-container">
         <div class="contactInfo">
@@ -60,8 +60,8 @@
                 </div>
                 <div class="text">
                     <h3>Email</h3>
-                    <p id="contact">mxjiizxo@nhvdg.ddoh.vx.di
-                    <button onclick="Decrypt()" class="decrypt-btn">(Click me to decrypt)</button></p>
+                    <p id="contact">
+                    <button onclick="Decrypt()" class="decrypt-btn">mxjiizxo@nhvdg.ddoh.vx.di (Click me to decrypt)</button></p>
                 </div>
                 
             </div>
@@ -108,7 +108,7 @@
     }
 
     function Decrypt(){
-    document.getElementById("contact").innerHTML ="Contact me at " +startEncryption("mxjiizxo")+"@"+startEncryption("nhvdg")+"."+startEncryption("ddoh")+"."+startEncryption("vx")+"."+startEncryption("di");
+    document.getElementById("contact").innerHTML =startEncryption("mxjiizxo")+"@"+startEncryption("nhvdg")+"."+startEncryption("ddoh")+"."+startEncryption("vx")+"."+startEncryption("di");
     }
 
     function startEncryption(originalMessage) {
